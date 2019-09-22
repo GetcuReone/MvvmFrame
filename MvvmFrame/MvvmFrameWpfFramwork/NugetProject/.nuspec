@@ -4,7 +4,7 @@
         <!-- The identifier that must be unique within the hosting gallery -->
         <id>MvvmFrameWpf</id>
         <!-- The package version number that is used when resolving dependencies -->
-        <version>3.2.2</version>
+        <version>3.2.3</version>
         <!-- Authors contain text that appears directly on the gallery -->
         <authors>Getcu Reone</authors>
         <!-- 
@@ -26,7 +26,7 @@
         <!-- Any details about this particular release -->
         <releaseNotes>
           Changes:
-          - putch
+          - posted the code on the GitHub
         </releaseNotes>
         <!-- 
             The description can be used in package manager UI. Note that the
