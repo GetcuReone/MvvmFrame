@@ -1,0 +1,22 @@
+steps:
+- task: DownloadSecureFile@1
+  displayName: 'Installing secure file'
+  name: 'snk_file'
+  inputs:
+    secureFile: 'GetcuReone.snk'
+
+- script: |
+    echo Install file $(snk_file.secureFilePath)
+
+    cp '$(snk_file.secureFilePath)' '$(Build.Repository.LocalPath)/ComboPatterns/ComboPatterns'
+    echo copied '$(snk_file.secureFilePath)' to '$(Build.Repository.LocalPath)\ComboPatterns\ComboPatterns'
+
+    cp '$(snk_file.secureFilePath)' '$(Build.Repository.LocalPath)/ComboPatterns/ComboPatterns.AFAP'
+    echo copied '$(snk_file.secureFilePath)' to '$(Build.Repository.LocalPath)\ComboPatterns\ComboPatterns.AFAP'
+
+    cp '$(snk_file.secureFilePath)' '$(Build.Repository.LocalPath)/ComboPatterns/Tests/ComboPatterns.AFAP.UnitTests'
+    echo copied '$(snk_file.secureFilePath)' to '$(Build.Repository.LocalPath)\ComboPatterns\Tests\ComboPatterns.AFAP.UnitTests'
+
+    cp '$(snk_file.secureFilePath)' '$(Build.Repository.LocalPath)/ComboPatterns/NugetProject'
+    echo copied '$(snk_file.secureFilePath)' to '$(Build.Repository.LocalPath)\ComboPatterns\NugetProject'
+  displayName: 'Сopy file snk to projects'
