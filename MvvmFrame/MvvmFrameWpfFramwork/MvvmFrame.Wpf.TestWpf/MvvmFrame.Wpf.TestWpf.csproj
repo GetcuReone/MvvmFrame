@@ -34,6 +34,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>GetcuReone.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -101,6 +107,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="GetcuReone.snk" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -121,11 +128,11 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MvvmFrameWpfFramwork\MvvmFrame.Wpf\MvvmFrame.Wpf.csproj">
+    <ProjectReference Include="..\MvvmFrame.Wpf\MvvmFrame.Wpf.csproj">
       <Project>{89f038a5-29cc-419b-a282-33b99c2fa868}</Project>
       <Name>MvvmFrame.Wpf</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MvvmFrame\MvvmFrame.csproj">
+    <ProjectReference Include="..\..\MvvmFrame\MvvmFrame.csproj">
       <Project>{9d25ff29-326b-4634-a6d8-cf1d7c17aa46}</Project>
       <Name>MvvmFrame</Name>
     </ProjectReference>

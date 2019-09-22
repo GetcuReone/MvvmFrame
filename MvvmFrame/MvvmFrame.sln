@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFrame.Wpf", "MvvmFrameW
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFrame.Wpf.UnitTests", "MvvmFrameWpfFramwork\MvvmFrame.Wpf.UnitTests\MvvmFrame.Wpf.UnitTests.csproj", "{0932C40A-4583-405C-8C80-4572E8E0C93A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFrame.Wpf.TestWpf", "MvvmFrame.Wpf.TestWpf\MvvmFrame.Wpf.TestWpf.csproj", "{C6790CE7-1325-4560-9798-68C0AA8FD4E2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFrame.Wpf.TestWpf", "MvvmFrameWpfFramwork\MvvmFrame.Wpf.TestWpf\MvvmFrame.Wpf.TestWpf.csproj", "{C6790CE7-1325-4560-9798-68C0AA8FD4E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

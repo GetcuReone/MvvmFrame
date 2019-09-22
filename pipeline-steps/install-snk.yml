@@ -8,15 +8,18 @@ steps:
 - script: |
     echo Install file $(snk_file.secureFilePath)
 
-    cp '$(snk_file.secureFilePath)' '$(Build.Repository.LocalPath)/ComboPatterns/ComboPatterns'
-    echo copied '$(snk_file.secureFilePath)' to '$(Build.Repository.LocalPath)\ComboPatterns\ComboPatterns'
+    cp '$(snk_file.secureFilePath)' '$(Build.Repository.LocalPath)/MvvmFrame/MvvmFrame'
+    echo copied '$(snk_file.secureFilePath)' to '$(Build.Repository.LocalPath)\MvvmFrame\MvvmFrame'
 
-    cp '$(snk_file.secureFilePath)' '$(Build.Repository.LocalPath)/ComboPatterns/ComboPatterns.AFAP'
-    echo copied '$(snk_file.secureFilePath)' to '$(Build.Repository.LocalPath)\ComboPatterns\ComboPatterns.AFAP'
+    cp '$(snk_file.secureFilePath)' '$(Build.Repository.LocalPath)/MvvmFrame/MvvmFrameWpfFramwork/MvvmFrame.Wpf'
+    echo copied '$(snk_file.secureFilePath)' to '$(Build.Repository.LocalPath)\MvvmFrame\MvvmFrameWpfFramwork\MvvmFrame.Wpf'
 
-    cp '$(snk_file.secureFilePath)' '$(Build.Repository.LocalPath)/ComboPatterns/Tests/ComboPatterns.AFAP.UnitTests'
-    echo copied '$(snk_file.secureFilePath)' to '$(Build.Repository.LocalPath)\ComboPatterns\Tests\ComboPatterns.AFAP.UnitTests'
+    cp '$(snk_file.secureFilePath)' '$(Build.Repository.LocalPath)/MvvmFrame/Tests/MvvmFrameWpfFramwork/MvvmFrame.Wpf.TestWpf'
+    echo copied '$(snk_file.secureFilePath)' to '$(Build.Repository.LocalPath)\MvvmFrame\Tests\MvvmFrameWpfFramwork\MvvmFrame.Wpf.TestWpf'
 
-    cp '$(snk_file.secureFilePath)' '$(Build.Repository.LocalPath)/ComboPatterns/NugetProject'
-    echo copied '$(snk_file.secureFilePath)' to '$(Build.Repository.LocalPath)\ComboPatterns\NugetProject'
+    cp '$(snk_file.secureFilePath)' '$(Build.Repository.LocalPath)/MvvmFrame/MvvmFrameWpfFramwork/MvvmFrame.Wpf.UnitTests'
+    echo copied '$(snk_file.secureFilePath)' to '$(Build.Repository.LocalPath)\MvvmFrame\MvvmFrameWpfFramwork\MvvmFrame.Wpf.UnitTests'
+
+    cp '$(snk_file.secureFilePath)' '$(Build.Repository.LocalPath)/MvvmFrame/MvvmFrameWpfFramwork/NugetProject'
+    echo copied '$(snk_file.secureFilePath)' to '$(Build.Repository.LocalPath)\MvvmFrame\MvvmFrameWpfFramwork\NugetProject'
   displayName: 'Сopy file snk to projects'
