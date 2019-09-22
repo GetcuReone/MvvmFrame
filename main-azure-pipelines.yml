@@ -46,7 +46,7 @@ steps:
     versioningScheme: 'off'
 
 - task: NuGetCommand@2
-  displayName: 'NuGet push local source for .net framwork'
+  displayName: 'NuGet push local source for'
   inputs:
     command: 'push'
     packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
@@ -54,7 +54,7 @@ steps:
     publishVstsFeed: '8f2ada46-a80c-44b6-ab21-45b5fbae5c6d'
 
 # - task: NuGetCommand@2
-#   displayName: 'NuGet push nuget.org for .net framwork'
+#   displayName: 'NuGet push nuget.org'
 #   inputs:
 #     command: 'push'
 #     feedsToUse: 'config'
