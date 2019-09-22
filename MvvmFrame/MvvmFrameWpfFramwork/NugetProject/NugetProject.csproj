@@ -84,5 +84,15 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\MvvmFrame\MvvmFrame.csproj">
+      <Project>{9d25ff29-326b-4634-a6d8-cf1d7c17aa46}</Project>
+      <Name>MvvmFrame</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MvvmFrame.Wpf\MvvmFrame.Wpf.csproj">
+      <Project>{89f038a5-29cc-419b-a282-33b99c2fa868}</Project>
+      <Name>MvvmFrame.Wpf</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

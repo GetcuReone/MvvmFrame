@@ -37,10 +37,3 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-
-- task: NuGetCommand@2
-  displayName: 'NuGet pack for .net framwork'
-  inputs:
-    command: 'pack'
-    packagesToPack: '**/MvvmFrameWpfFramwork/NugetProject/.nuspec'
-    versioningScheme: 'off'
