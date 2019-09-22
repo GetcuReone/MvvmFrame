@@ -14,7 +14,7 @@ steps:
     cp '$(snk_file.secureFilePath)' '$(Build.Repository.LocalPath)/MvvmFrame/MvvmFrameWpfFramwork/MvvmFrame.Wpf'
     echo copied '$(snk_file.secureFilePath)' to '$(Build.Repository.LocalPath)\MvvmFrame\MvvmFrameWpfFramwork\MvvmFrame.Wpf'
 
-    cp '$(snk_file.secureFilePath)' '$(Build.Repository.LocalPath)/MvvmFrame/Tests/MvvmFrameWpfFramwork/MvvmFrame.Wpf.TestWpf'
+    cp '$(snk_file.secureFilePath)' '$(Build.Repository.LocalPath)/MvvmFrame/MvvmFrameWpfFramwork/MvvmFrame.Wpf.TestWpf'
     echo copied '$(snk_file.secureFilePath)' to '$(Build.Repository.LocalPath)\MvvmFrame\Tests\MvvmFrameWpfFramwork\MvvmFrame.Wpf.TestWpf'
 
     cp '$(snk_file.secureFilePath)' '$(Build.Repository.LocalPath)/MvvmFrame/MvvmFrameWpfFramwork/MvvmFrame.Wpf.UnitTests'

@@ -14,9 +14,6 @@ namespace MvvmFrame.Wpf.Commands
     /// </remarks>
     public class AsyncCommand : IAsyncCommand
     {
-#pragma warning disable IDE0052 // Remove unread private members
-        private bool _isExecuting;
-#pragma warning restore IDE0052 // Remove unread private members
         private readonly Func<AsyncCommandArgs, ValueTask> execute;
         private readonly Func<bool> canExecute;
         private readonly IErrorHandler errorHandler;
@@ -65,7 +62,6 @@ namespace MvvmFrame.Wpf.Commands
             {
                 try
                 {
-                    _isExecuting = true;
                     currentArgs = new AsyncCommandArgs();
                     await execute(currentArgs);
                     if (currentArgs.IsCancel)
@@ -75,7 +71,6 @@ namespace MvvmFrame.Wpf.Commands
                 }
                 finally
                 {
-                    _isExecuting = false;
                 }
             }
 
@@ -94,9 +89,6 @@ namespace MvvmFrame.Wpf.Commands
     /// <typeparam name="TParametr"></typeparam>
     public class AsyncCommand<TParametr>: IAsyncCommand<TParametr>
     {
-#pragma warning disable IDE0052 // Remove unread private members
-        private bool _isExecuting;
-#pragma warning restore IDE0052 // Remove unread private members
         private readonly Func<AsyncCommandArgs<TParametr>, ValueTask> execute;
         private readonly Func<TParametr, bool> canExecute;
         private readonly IErrorHandler errorHandler;
@@ -145,7 +137,6 @@ namespace MvvmFrame.Wpf.Commands
             {
                 try
                 {
-                    _isExecuting = true;
                     currentArgs = new AsyncCommandArgs<TParametr>(parametr);
                     await execute(currentArgs);
                     if (currentArgs.IsCancel)
@@ -155,7 +146,6 @@ namespace MvvmFrame.Wpf.Commands
                 }
                 finally
                 {
-                    _isExecuting = false;
                 }
             }
 
