@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace MvvmFrame.Intarfaces
+namespace MvvmFrame.Interfaces
 {
     /// <summary>
     /// Interface describing the operation with compensatory operation

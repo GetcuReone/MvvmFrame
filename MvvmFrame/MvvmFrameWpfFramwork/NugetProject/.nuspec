@@ -46,7 +46,7 @@
         <!-- Dependencies are automatically installed when the package is installed -->
         <dependencies>
             <dependency id="System.Threading.Tasks.Extensions" version="4.5.3" />
-            <dependency id="ComboPatterns" version="2.2.3" />
+            <dependency id="ComboPatterns" version="2.3.0" />
             <dependency id="PresentationFramework" version="4.6.0" />
         </dependencies>
     </metadata>

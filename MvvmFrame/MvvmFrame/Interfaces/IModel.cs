@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace MvvmFrame.Intarfaces
+namespace MvvmFrame.Interfaces
 {
     /// <summary>
     /// Base interface for model and view-model

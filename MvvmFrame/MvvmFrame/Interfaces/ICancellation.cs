@@ -1,4 +1,4 @@
-﻿namespace MvvmFrame.Intarfaces
+﻿namespace MvvmFrame.Interfaces
 {
     /// <summary>
     /// Interface cancel

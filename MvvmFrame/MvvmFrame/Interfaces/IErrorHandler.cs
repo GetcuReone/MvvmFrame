@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MvvmFrame.Intarfaces
+namespace MvvmFrame.Interfaces
 {
     /// <summary>
     /// Error handler

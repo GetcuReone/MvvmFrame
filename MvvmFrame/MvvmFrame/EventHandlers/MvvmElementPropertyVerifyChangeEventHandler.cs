@@ -1,5 +1,5 @@
 ﻿using MvvmFrame.EventArgs;
-using MvvmFrame.Intarfaces;
+using MvvmFrame.Interfaces;
 
 namespace MvvmFrame.EventHandlers
 {
