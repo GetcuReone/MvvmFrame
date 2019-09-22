@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NugetProject", "MvvmFrameWp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFrame.Wpf", "MvvmFrameWpfFramwork\MvvmFrame.Wpf\MvvmFrame.Wpf.csproj", "{89F038A5-29CC-419B-A282-33B99C2FA868}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFrame.Wpf.UnitTests", "MvvmFrameWpfFramwork\MvvmFrame.Wpf.UnitTests\MvvmFrame.Wpf.UnitTests.csproj", "{0932C40A-4583-405C-8C80-4572E8E0C93A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{89F038A5-29CC-419B-A282-33B99C2FA868}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89F038A5-29CC-419B-A282-33B99C2FA868}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89F038A5-29CC-419B-A282-33B99C2FA868}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0932C40A-4583-405C-8C80-4572E8E0C93A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0932C40A-4583-405C-8C80-4572E8E0C93A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0932C40A-4583-405C-8C80-4572E8E0C93A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0932C40A-4583-405C-8C80-4572E8E0C93A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,6 +42,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{0BAC4052-1F45-4071-B3E4-E1889CC6256A} = {2556E495-94FA-401A-9899-024D0276B856}
 		{89F038A5-29CC-419B-A282-33B99C2FA868} = {2556E495-94FA-401A-9899-024D0276B856}
+		{0932C40A-4583-405C-8C80-4572E8E0C93A} = {2556E495-94FA-401A-9899-024D0276B856}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {901F17CC-9BD0-425D-AB60-83BBBCE08CD8}
