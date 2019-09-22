@@ -53,11 +53,11 @@ steps:
     nuGetFeedType: 'internal'
     publishVstsFeed: '8f2ada46-a80c-44b6-ab21-45b5fbae5c6d'
 
-# - task: NuGetCommand@2
-#   displayName: 'NuGet push nuget.org'
-#   inputs:
-#     command: 'push'
-#     feedsToUse: 'config'
-#     packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
-#     nuGetFeedType: 'external'
-#     publishFeedCredentials: 'Nuget.org'
+- task: NuGetCommand@2
+  displayName: 'NuGet push nuget.org'
+  inputs:
+    command: 'push'
+    feedsToUse: 'config'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
+    nuGetFeedType: 'external'
+    publishFeedCredentials: 'Nuget.org'
