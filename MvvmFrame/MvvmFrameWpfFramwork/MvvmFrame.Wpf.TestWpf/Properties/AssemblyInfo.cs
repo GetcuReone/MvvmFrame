@@ -10,9 +10,9 @@ using System.Windows;
 [assembly: AssemblyTitle("MvvmFrame.Wpf.TestWpf")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("GetcuReone")]
 [assembly: AssemblyProduct("MvvmFrame.Wpf.TestWpf")]
-[assembly: AssemblyCopyright("Copyright ©  2019")]
+[assembly: AssemblyCopyright("Copyright © GetcuReone 2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

@@ -5,9 +5,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("MvvmFrame.Wpf.UnitTests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("GetcuReone")]
 [assembly: AssemblyProduct("MvvmFrame.Wpf.UnitTests")]
-[assembly: AssemblyCopyright("Copyright ©  2019")]
+[assembly: AssemblyCopyright("Copyright © GetcuReone 2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

@@ -6,11 +6,11 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("MvvmFrame.Wpf")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Implement MvvmFrame for Wpf .NetFramework")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Getcu Reone")]
-[assembly: AssemblyProduct("NugetProject")]
-[assembly: AssemblyCopyright("Copyright © 2019 GetcuReone")]
+[assembly: AssemblyCompany("GetcuReone")]
+[assembly: AssemblyProduct("MvvmFrame.Wpf")]
+[assembly: AssemblyCopyright("Copyright © GetcuReone 2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

@@ -4,6 +4,12 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>GetcuReone.snk</AssemblyOriginatorKeyFile>
+    <Authors>GetcuReone</Authors>
+    <Company>GetcuReone</Company>
+    <Product>MvvmFrame</Product>
+    <Description>Pattern implementation MVVM with Frame</Description>
+    <Copyright>Copyright © GetcuReone 2019</Copyright>
+    <RepositoryUrl>https://github.com/GetcuReone/MvvmFrame.git</RepositoryUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
