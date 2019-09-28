@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace MvvmFrame.Wpf.Helpers
 {
-    internal static class TaskHelper
+    public static class TaskHelper
     {
         public static async void FireAndForgetSafeAsync(this ValueTask valueTask, IErrorHandler handler = null)
         {

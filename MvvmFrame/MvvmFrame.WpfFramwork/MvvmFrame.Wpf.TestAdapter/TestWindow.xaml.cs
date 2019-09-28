@@ -3,10 +3,13 @@
 namespace MvvmFrame.Wpf.TestAdapter
 {
     /// <summary>
-    /// Interaction logic for TestWindow.xaml
+    /// for internal use
     /// </summary>
-    internal partial class TestWindow : Window
+    public partial class TestWindow : Window
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public TestWindow()
         {
             InitializeComponent();
