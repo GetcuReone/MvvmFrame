@@ -16,6 +16,8 @@
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageReleaseNotes>separated projects MvvmFrame</PackageReleaseNotes>
     <PackageId>MvvmFrame.root</PackageId>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
