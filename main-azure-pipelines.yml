@@ -33,7 +33,7 @@ steps:
     configuration: '$(buildConfiguration)'
 
 - task: NuGetCommand@2
-  displayName: 'NuGet pack for .net framwork'
+  displayName: 'NuGet pack'
   inputs:
     command: 'pack'
     packagesToPack: '**/MvvmFrame/.nuspec'
