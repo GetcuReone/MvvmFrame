@@ -15,6 +15,7 @@
     <PackageTags>wpf frame mvvm</PackageTags>
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageReleaseNotes>separated projects MvvmFrame</PackageReleaseNotes>
+    <PackageId>MvvmFrame.root</PackageId>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
