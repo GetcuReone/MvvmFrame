@@ -10,6 +10,7 @@
     <Description>Pattern implementation MVVM with Frame</Description>
     <Copyright>Copyright © GetcuReone 2019</Copyright>
     <RepositoryUrl>https://github.com/GetcuReone/MvvmFrame.git</RepositoryUrl>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

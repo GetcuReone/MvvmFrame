@@ -2,9 +2,9 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
     <metadata>
         <!-- The identifier that must be unique within the hosting gallery -->
-        <id>MvvmFrameWpf</id>
+        <id>MvvmFrame</id>
         <!-- The package version number that is used when resolving dependencies -->
-        <version>3.3.0</version>
+        <version>1.0.0</version>
         <!-- Authors contain text that appears directly on the gallery -->
         <authors>Getcu Reone</authors>
         <!-- 
@@ -26,14 +26,14 @@
         <!-- Any details about this particular release -->
         <releaseNotes>
           Changes:
-          - posted the code on the GitHub
+          - separated projects
         </releaseNotes>
         <!-- 
             The description can be used in package manager UI. Note that the
             nuget.org gallery uses information you add in the portal. 
         -->
         <repository type="git" url="https://github.com/GetcuReone/MvvmFrame.git" branch="master"/>
-        <description>Pattern implementation MVVM with Frame for WPF. For .Net Framework</description>
+        <description>set of interfaces for implementing the pattern MVVM with Frame</description>
 
         <!-- Copyright information -->
         <copyright>Copyright © GetcuReone 2019</copyright>
@@ -46,8 +46,6 @@
         <!-- Dependencies are automatically installed when the package is installed -->
         <dependencies>
             <dependency id="System.Threading.Tasks.Extensions" version="4.5.3" />
-            <dependency id="ComboPatterns" version="2.3.0" />
-            <dependency id="PresentationFramework" version="4.6.0" />
         </dependencies>
     </metadata>
 

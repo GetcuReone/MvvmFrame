@@ -10,16 +10,4 @@ steps:
 
     cp '$(snk_file.secureFilePath)' '$(Build.Repository.LocalPath)/MvvmFrame/MvvmFrame'
     echo copied '$(snk_file.secureFilePath)' to '$(Build.Repository.LocalPath)\MvvmFrame\MvvmFrame'
-
-    cp '$(snk_file.secureFilePath)' '$(Build.Repository.LocalPath)/MvvmFrame/MvvmFrameWpfFramwork/MvvmFrame.Wpf'
-    echo copied '$(snk_file.secureFilePath)' to '$(Build.Repository.LocalPath)\MvvmFrame\MvvmFrameWpfFramwork\MvvmFrame.Wpf'
-
-    cp '$(snk_file.secureFilePath)' '$(Build.Repository.LocalPath)/MvvmFrame/MvvmFrameWpfFramwork/MvvmFrame.Wpf.TestWpf'
-    echo copied '$(snk_file.secureFilePath)' to '$(Build.Repository.LocalPath)\MvvmFrame\Tests\MvvmFrameWpfFramwork\MvvmFrame.Wpf.TestWpf'
-
-    cp '$(snk_file.secureFilePath)' '$(Build.Repository.LocalPath)/MvvmFrame/MvvmFrameWpfFramwork/MvvmFrame.Wpf.UnitTests'
-    echo copied '$(snk_file.secureFilePath)' to '$(Build.Repository.LocalPath)\MvvmFrame\MvvmFrameWpfFramwork\MvvmFrame.Wpf.UnitTests'
-
-    cp '$(snk_file.secureFilePath)' '$(Build.Repository.LocalPath)/MvvmFrame/MvvmFrameWpfFramwork/NugetProject'
-    echo copied '$(snk_file.secureFilePath)' to '$(Build.Repository.LocalPath)\MvvmFrame\MvvmFrameWpfFramwork\NugetProject'
   displayName: 'Сopy file snk to projects'

@@ -32,17 +32,11 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: VSTest@2
-  displayName: 'VS tests run'
-  inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
-
 - task: NuGetCommand@2
   displayName: 'NuGet pack for .net framwork'
   inputs:
     command: 'pack'
-    packagesToPack: '**/MvvmFrameWpfFramwork/NugetProject/.nuspec'
+    packagesToPack: '**/MvvmFrame/.nuspec'
     versioningScheme: 'off'
 
 - task: NuGetCommand@2
@@ -52,12 +46,3 @@ steps:
     packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
     nuGetFeedType: 'internal'
     publishVstsFeed: '8f2ada46-a80c-44b6-ab21-45b5fbae5c6d'
-
-- task: NuGetCommand@2
-  displayName: 'NuGet push nuget.org'
-  inputs:
-    command: 'push'
-    feedsToUse: 'config'
-    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
-    nuGetFeedType: 'external'
-    publishFeedCredentials: 'Nuget.org'
