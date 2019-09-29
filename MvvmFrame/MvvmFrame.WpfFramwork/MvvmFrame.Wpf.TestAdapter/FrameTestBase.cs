@@ -44,7 +44,7 @@ namespace MvvmFrame.Wpf.TestAdapter
                             await Task.Delay(100);
                     }
                 };
-                _window.ShowDialog();
+                _window.Show();
             });
         }
 
@@ -65,7 +65,7 @@ namespace MvvmFrame.Wpf.TestAdapter
         /// <param name="discription"></param>
         /// <param name="givenBlock"></param>
         /// <returns></returns>
-        public virtual Given Given(string discription, Func<Frame, ValueTask> givenBlock)
+        protected virtual Given Given(string discription, Func<Frame, ValueTask> givenBlock)
         {
             bool givenBlockComplited = false;
             var given = new Given

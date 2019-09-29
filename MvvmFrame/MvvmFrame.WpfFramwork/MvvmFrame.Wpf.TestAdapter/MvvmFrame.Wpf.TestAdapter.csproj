@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Entities\AndGiven.cs" />
     <Compile Include="Entities\Given.cs" />
+    <Compile Include="Entities\When.cs" />
     <Compile Include="FrameTestBase.cs" />
     <Compile Include="TestWindow.xaml.cs">
       <DependentUpon>TestWindow.xaml</DependentUpon>

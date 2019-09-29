@@ -10,5 +10,9 @@ namespace MvvmFrame.Wpf.TestAdapter.Entities
     /// </summary>
     public class AndGiven: Given
     {
+        /// <summary>
+        /// Previous given
+        /// </summary>
+        public Given PreviousGiven { get; internal set; }
     }
 }

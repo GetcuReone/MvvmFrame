@@ -35,6 +35,7 @@ namespace MvvmFrame.Wpf.TestAdapter.Entities
                 Frame = Frame,
                 FuncsQueue = FuncsQueue,
                 Discription = discription,
+                PreviousGiven = this,
             };
 
             Console.WriteLine($"And given '{andGiven.Discription}' init time: {DateTime.Now}");
@@ -54,6 +55,41 @@ namespace MvvmFrame.Wpf.TestAdapter.Entities
 
             Console.WriteLine($"And given '{andGiven.Discription}' end time: {DateTime.Now}\n");
             return andGiven;
+        }
+
+        /// <summary>
+        /// Block when
+        /// </summary>
+        /// <param name="discription"></param>
+        /// <param name="whenBlock"></param>
+        /// <returns></returns>
+        public virtual When When(string discription, Func<ValueTask> whenBlock)
+        {
+            bool whenBlockComplited = false;
+            var when = new When
+            {
+                FuncsQueue = FuncsQueue,
+                Discription = discription,
+                Given = this,
+            };
+
+            Console.WriteLine($"When '{when.Discription}' init time: {DateTime.Now}");
+
+            FuncsQueue.Enqueue(async () =>
+            {
+                Console.WriteLine($"When '{when.Discription}' run time: {DateTime.Now}");
+
+                await whenBlock();
+                whenBlockComplited = true;
+
+                Console.WriteLine($"When '{when.Discription}' finish time: {DateTime.Now}");
+            });
+
+            while (!whenBlockComplited)
+                Thread.Sleep(100);
+
+            Console.WriteLine($"When '{when.Discription}' end time: {DateTime.Now}\n");
+            return when;
         }
     }
 
