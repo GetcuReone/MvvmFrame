@@ -48,12 +48,6 @@ namespace MvvmFrame.Interfaces
         void OnPropertyChanged([CallerMemberName]string propertyName = "");
 
         /// <summary>
-        /// Handler warnings
-        /// </summary>
-        /// <param name="getWarningMessageList"></param>
-        void OnWarnings(List<Func<string>> getWarningMessageList);
-
-        /// <summary>
         /// Hendler errors
         /// </summary>
         /// <param name="getErrorMessageList"></param>
