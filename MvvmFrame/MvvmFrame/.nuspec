@@ -4,7 +4,7 @@
         <!-- The identifier that must be unique within the hosting gallery -->
         <id>MvvmFrame.root</id>
         <!-- The package version number that is used when resolving dependencies -->
-        <version>4.1.2</version>
+        <version>4.1.3</version>
         <!-- Authors contain text that appears directly on the gallery -->
         <authors>Getcu Reone</authors>
         <!-- 
@@ -14,7 +14,7 @@
         <owners>GetcuReone</owners>
 
          <!-- Project URL provides a link for the gallery -->
-        <projectUrl>https://github.com/GetcuReone/MvvmFrame.git</projectUrl>
+        <!--<projectUrl>https://github.com/GetcuReone/MvvmFrame.git</projectUrl>-->
 
          <!-- License information is displayed on the gallery -->
         <license type="expression">Apache-2.0</license>
@@ -50,6 +50,7 @@
 
     <!-- A readme.txt to display when the package is installed -->
      <files>
-       <file src="bin\Release\MvvmFrame*" target="lib\netstandard2.0" />
+       <file src="bin\Release\netstandard2.0\MvvmFrame.dll" target="lib\netstandard2.0" />
+       <file src="bin\Release\netstandard2.0\MvvmFrame.xml" target="lib\netstandard2.0" />
     </files> 
 </package>

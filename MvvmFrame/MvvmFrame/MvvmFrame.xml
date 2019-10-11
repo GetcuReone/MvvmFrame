@@ -169,12 +169,6 @@
             </summary>
             <param name="propertyName"></param>
         </member>
-        <member name="M:MvvmFrame.Interfaces.IModel.OnWarnings(System.Collections.Generic.List{System.Func{System.String}})">
-            <summary>
-            Handler warnings
-            </summary>
-            <param name="getWarningMessageList"></param>
-        </member>
         <member name="M:MvvmFrame.Interfaces.IModel.OnErrors(System.Collections.Generic.List{System.Func{System.String}})">
             <summary>
             Hendler errors
