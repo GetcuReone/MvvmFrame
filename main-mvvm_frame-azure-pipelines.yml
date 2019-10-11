@@ -36,7 +36,7 @@ steps:
   displayName: 'NuGet pack'
   inputs:
     command: 'pack'
-    packagesToPack: '**/MvvmFrame/MvvmFrame.csproj'
+    packagesToPack: '**/MvvmFrame/.nuspec'
     versioningScheme: 'off'
 
 - task: NuGetCommand@2
