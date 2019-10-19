@@ -4,6 +4,27 @@
         <name>MvvmFrame</name>
     </assembly>
     <members>
+        <member name="T:MvvmFrame.Entities.MvvmFrameErrorDetail">
+            <summary>
+            Error detail
+            </summary>
+        </member>
+        <member name="P:MvvmFrame.Entities.MvvmFrameErrorDetail.Code">
+            <summary>
+            Code error
+            </summary>
+        </member>
+        <member name="P:MvvmFrame.Entities.MvvmFrameErrorDetail.Message">
+            <summary>
+            Message error
+            </summary>
+        </member>
+        <member name="M:MvvmFrame.Entities.MvvmFrameErrorDetail.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:MvvmFrame.EventArgs.MvvmElementPropertyVerifyChangeEventArgs">
             <summary>
             Parameters of the event of verification of a change in the model property
@@ -20,22 +41,23 @@
             True - event valid. It is not valid if there is at least one error
             </summary>
         </member>
-        <member name="P:MvvmFrame.EventArgs.MvvmElementPropertyVerifyChangeEventArgs._errorFuncs">
-            <summary>
-            For internal use
-            </summary>
-        </member>
-        <member name="M:MvvmFrame.EventArgs.MvvmElementPropertyVerifyChangeEventArgs.AddError(System.Func{System.String})">
+        <member name="M:MvvmFrame.EventArgs.MvvmElementPropertyVerifyChangeEventArgs.AddError(MvvmFrame.Entities.MvvmFrameErrorDetail)">
             <summary>
             Add error
             </summary>
-            <param name="getErrorMessage">func creation error message</param>
+            <param name="detail"></param>
         </member>
-        <member name="M:MvvmFrame.EventArgs.MvvmElementPropertyVerifyChangeEventArgs.RemoveError(System.Func{System.String})">
+        <member name="M:MvvmFrame.EventArgs.MvvmElementPropertyVerifyChangeEventArgs.RemoveError(MvvmFrame.Entities.MvvmFrameErrorDetail)">
             <summary>
             Remove error
             </summary>
-            <param name="getErrorMessage">func creation error message</param>
+            <param name="detail"></param>
+        </member>
+        <member name="M:MvvmFrame.EventArgs.MvvmElementPropertyVerifyChangeEventArgs.GetErrors">
+            <summary>
+            Return list erors
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:MvvmFrame.EventHandlers.MvvmElementPropertyVerifyChangeEventHandler">
             <summary>
@@ -138,17 +160,10 @@
             Event virification <see cref="T:MvvmFrame.Interfaces.IModel"/>
             </summary>
         </member>
-        <member name="P:MvvmFrame.Interfaces.IModel.Options">
+        <member name="P:MvvmFrame.Interfaces.IModel.ModelOptions">
             <summary>
             Model options
             </summary>
-        </member>
-        <member name="M:MvvmFrame.Interfaces.IModel.Verification(System.String)">
-            <summary>
-            Property change verification method
-            </summary>
-            <param name="propertyName">property name</param>
-            <returns></returns>
         </member>
         <member name="M:MvvmFrame.Interfaces.IModel.GetModel``1">
             <summary>
@@ -169,11 +184,17 @@
             </summary>
             <param name="propertyName"></param>
         </member>
-        <member name="M:MvvmFrame.Interfaces.IModel.OnErrors(System.Collections.Generic.List{System.Func{System.String}})">
+        <member name="M:MvvmFrame.Interfaces.IModel.OnVerification(MvvmFrame.EventArgs.MvvmElementPropertyVerifyChangeEventArgs)">
+            <summary>
+            Verification hendler
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:MvvmFrame.Interfaces.IModel.OnErrors(System.Collections.ObjectModel.ReadOnlyCollection{MvvmFrame.Entities.MvvmFrameErrorDetail})">
             <summary>
             Hendler errors
             </summary>
-            <param name="getErrorMessageList"></param>
+            <param name="details"></param>
         </member>
         <member name="T:MvvmFrame.Interfaces.IModelOptions">
             <summary>
@@ -185,9 +206,9 @@
             use only <see cref="M:MvvmFrame.Interfaces.IModel.OnPropertyChanged(System.String)"/>
             </summary>
         </member>
-        <member name="P:MvvmFrame.Interfaces.IModelOptions.UseVerification">
+        <member name="P:MvvmFrame.Interfaces.IModelOptions.UseOnVerification">
             <summary>
-            use <see cref="M:MvvmFrame.Interfaces.IModel.Verification(System.String)"/>
+            use <see cref="M:MvvmFrame.Interfaces.IModel.OnVerification(MvvmFrame.EventArgs.MvvmElementPropertyVerifyChangeEventArgs)"/>
             </summary>
         </member>
         <member name="P:MvvmFrame.Interfaces.IModelOptions.UseVerifyPropertyChange">
