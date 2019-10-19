@@ -10,14 +10,15 @@
     <Description>Pattern implementation MVVM with Frame. This library is the basis for other libraries of the family. Use other libraries for projects. Root project</Description>
     <Copyright>Copyright © GetcuReone 2019</Copyright>
     <RepositoryUrl>https://github.com/GetcuReone/MvvmFrame.git</RepositoryUrl>
-    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>5.0.0.0</AssemblyVersion>
     <Version>4.1.0</Version>
     <PackageTags>wpf frame mvvm</PackageTags>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <PackageReleaseNotes>fix interface</PackageReleaseNotes>
+    <PackageReleaseNotes>Changed work with errors when changing a property</PackageReleaseNotes>
     <PackageId>MvvmFrame.root</PackageId>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <FileVersion>5.0.0.0</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

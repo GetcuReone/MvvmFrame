@@ -1,6 +1,9 @@
-﻿using MvvmFrame.EventHandlers;
+﻿using MvvmFrame.Entities;
+using MvvmFrame.EventArgs;
+using MvvmFrame.EventHandlers;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
@@ -19,14 +22,7 @@ namespace MvvmFrame.Interfaces
         /// <summary>
         /// Model options
         /// </summary>
-        IModelOptions Options { get; set; }
-
-        /// <summary>
-        /// Property change verification method
-        /// </summary>
-        /// <param name="propertyName">property name</param>
-        /// <returns></returns>
-        string Verification(string propertyName);
+        IModelOptions ModelOptions { get; set; }
 
         /// <summary>
         /// Method creation model
@@ -48,9 +44,15 @@ namespace MvvmFrame.Interfaces
         void OnPropertyChanged([CallerMemberName]string propertyName = "");
 
         /// <summary>
+        /// Verification hendler
+        /// </summary>
+        /// <param name="e"></param>
+        void OnVerification(MvvmElementPropertyVerifyChangeEventArgs e);
+
+        /// <summary>
         /// Hendler errors
         /// </summary>
-        /// <param name="getErrorMessageList"></param>
-        void OnErrors(List<Func<string>> getErrorMessageList);
+        /// <param name="details"></param>
+        void OnErrors(ReadOnlyCollection<MvvmFrameErrorDetail> details);
     }
 }

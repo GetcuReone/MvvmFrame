@@ -10,12 +10,12 @@
         /// </summary>
         bool UseOnlyOnPropertyChanged { get; set; }
         /// <summary>
-        /// use <see cref="IModel.Verification(string)"/>
+        /// use <see cref="IModel.OnVerification(EventArgs.MvvmElementPropertyVerifyChangeEventArgs)"/>
         /// </summary>
-        bool UseVerification { get; }
+        bool UseOnVerification { get; set; }
         /// <summary>
         /// use <see cref="IModel.VerifyPropertyChange"/>
         /// </summary>
-        bool UseVerifyPropertyChange { get; }
+        bool UseVerifyPropertyChange { get; set; }
     }
 }

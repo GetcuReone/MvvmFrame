@@ -1,5 +1,7 @@
-﻿using System;
+﻿using MvvmFrame.Entities;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 
 namespace MvvmFrame.EventArgs
@@ -9,6 +11,8 @@ namespace MvvmFrame.EventArgs
     /// </summary>
     public class MvvmElementPropertyVerifyChangeEventArgs : PropertyChangedEventArgs
     {
+        private readonly List<MvvmFrameErrorDetail> _errors = new List<MvvmFrameErrorDetail>();
+
         /// <summary>
         /// Constructor
         /// </summary>
@@ -18,22 +22,23 @@ namespace MvvmFrame.EventArgs
         /// <summary>
         /// True - event valid. It is not valid if there is at least one error
         /// </summary>
-        public bool IsValid => _errorFuncs.Count == 0;
-
-        /// <summary>
-        /// For internal use
-        /// </summary>
-        public List<Func<string>> _errorFuncs { get; } = new List<Func<string>>();
+        public bool IsValid => _errors.Count == 0;
 
         /// <summary>
         /// Add error
         /// </summary>
-        /// <param name="getErrorMessage">func creation error message</param>
-        public void AddError(Func<string> getErrorMessage) => _errorFuncs.Add(getErrorMessage);
+        /// <param name="detail"></param>
+        public void AddError(MvvmFrameErrorDetail detail) => _errors.Add(detail);
         /// <summary>
         /// Remove error
         /// </summary>
-        /// <param name="getErrorMessage">func creation error message</param>
-        public void RemoveError(Func<string> getErrorMessage) => _errorFuncs.Remove(getErrorMessage);
+        /// <param name="detail"></param>
+        public void RemoveError(MvvmFrameErrorDetail detail) => _errors.Remove(detail);
+
+        /// <summary>
+        /// Return list erors
+        /// </summary>
+        /// <returns></returns>
+        public ReadOnlyCollection<MvvmFrameErrorDetail> GetErrors() => new ReadOnlyCollection<MvvmFrameErrorDetail>(_errors);
     }
 }
