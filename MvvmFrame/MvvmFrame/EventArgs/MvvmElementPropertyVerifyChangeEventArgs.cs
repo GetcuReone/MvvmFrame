@@ -1,5 +1,4 @@
-﻿using MvvmFrame.Entities;
-using System;
+﻿using GetcuReone.MvvmFrame.Entities;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;

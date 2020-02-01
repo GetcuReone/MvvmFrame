@@ -1,5 +1,5 @@
-﻿using MvvmFrame.EventArgs;
-using MvvmFrame.Interfaces;
+﻿using GetcuReone.MvvmFrame.EventArgs;
+using GetcuReone.MvvmFrame.Interfaces;
 
 namespace GetcuReone.MvvmFrame.EventHandlers
 {
