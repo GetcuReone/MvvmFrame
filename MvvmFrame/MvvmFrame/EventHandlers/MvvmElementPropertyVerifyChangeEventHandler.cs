@@ -1,7 +1,7 @@
 ﻿using MvvmFrame.EventArgs;
 using MvvmFrame.Interfaces;
 
-namespace MvvmFrame.EventHandlers
+namespace GetcuReone.MvvmFrame.EventHandlers
 {
     /// <summary>
     /// Delegate for model change property verification events

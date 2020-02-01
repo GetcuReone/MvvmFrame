@@ -7,7 +7,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace MvvmFrame.Interfaces
+namespace GetcuReone.MvvmFrame.Interfaces
 {
     /// <summary>
     /// Base interface for model and view-model

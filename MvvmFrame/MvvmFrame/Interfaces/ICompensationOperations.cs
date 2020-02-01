@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MvvmFrame.Interfaces
+namespace GetcuReone.MvvmFrame.Interfaces
 {
     /// <summary>
     /// Interface describing the operation with compensatory operation
