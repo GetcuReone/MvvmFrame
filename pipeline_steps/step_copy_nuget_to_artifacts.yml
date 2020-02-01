@@ -2,6 +2,6 @@ steps:
 - task: CopyFiles@2
   displayName: "Copy nuget to artifacts"
   inputs:
-    SourceFolder: '$(Build.Repository.LocalPath)/$(solutionName)/NugetProject/bin/$(buildConfiguration)'
+    SourceFolder: '$(Build.Repository.LocalPath)/$(solutionName)/$(nugetProjectName)/bin/$(buildConfiguration)'
     Contents: '$(packageFileName)'
     TargetFolder: '$(Build.ArtifactStagingDirectory)/$(solutionName)'
