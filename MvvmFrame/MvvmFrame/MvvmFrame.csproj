@@ -2,35 +2,42 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>GetcuReone.snk</AssemblyOriginatorKeyFile>
+    <DocumentationFile>MvvmFrame.xml</DocumentationFile>
+    
     <Authors>GetcuReone</Authors>
-    <Company>GetcuReone</Company>
-    <Product>MvvmFrame</Product>
-    <Description>Pattern implementation MVVM with Frame. This library is the basis for other libraries of the family. Use other libraries for projects. Root project</Description>
-    <Copyright>Copyright © GetcuReone 2019</Copyright>
-    <RepositoryUrl>https://github.com/GetcuReone/MvvmFrame.git</RepositoryUrl>
-    <AssemblyVersion>5.0.0.0</AssemblyVersion>
-    <Version>4.1.0</Version>
-    <PackageTags>wpf frame mvvm</PackageTags>
-    <NeutralLanguage>en-US</NeutralLanguage>
-    <PackageReleaseNotes>Changed work with errors when changing a property</PackageReleaseNotes>
     <PackageId>MvvmFrame.root</PackageId>
+    <Product>MvvmFrame.root</Product>
+    <Description>Pattern implementation MVVM with Frame. This library is the basis for other libraries of the family. Use other libraries for projects. Root project</Description>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/GetcuReone/MvvmFrame.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>wpf frame mvvm mvvmframe getcureone</PackageTags>
+    <PackageReleaseNotes>Corrections in naming namespaces</PackageReleaseNotes>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <FileVersion>5.0.0.0</FileVersion>
+    <Copyright>Copyright © GetcuReone 2019</Copyright>
+    <NeutralLanguage>en-US</NeutralLanguage>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>MvvmFrame.xml</DocumentationFile>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>MvvmFrame.xml</DocumentationFile>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\GetcuReone.snk</AssemblyOriginatorKeyFile>
+    <DelaySign>false</DelaySign>
+    <AssemblyVersion>$(majorVersion).0.0.0</AssemblyVersion>
+    <FileVersion>$(majorVersion).0.0.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="MvvmFrame.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
