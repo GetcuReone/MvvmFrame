@@ -1,10 +1,9 @@
-﻿using MvvmFrame.Entities;
-using System;
+﻿using GetcuReone.MvvmFrame.Entities;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 
-namespace MvvmFrame.EventArgs
+namespace GetcuReone.MvvmFrame.EventArgs
 {
     /// <summary>
     /// Parameters of the event of verification of a change in the model property

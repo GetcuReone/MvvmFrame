@@ -1,4 +1,4 @@
-﻿namespace MvvmFrame.Entities
+﻿namespace GetcuReone.MvvmFrame.Entities
 {
     /// <summary>
     /// Error detail

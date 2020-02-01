@@ -4,224 +4,224 @@
         <name>MvvmFrame</name>
     </assembly>
     <members>
-        <member name="T:MvvmFrame.Entities.MvvmFrameErrorDetail">
+        <member name="T:GetcuReone.MvvmFrame.Entities.MvvmFrameErrorDetail">
             <summary>
             Error detail
             </summary>
         </member>
-        <member name="P:MvvmFrame.Entities.MvvmFrameErrorDetail.Code">
+        <member name="P:GetcuReone.MvvmFrame.Entities.MvvmFrameErrorDetail.Code">
             <summary>
             Code error
             </summary>
         </member>
-        <member name="P:MvvmFrame.Entities.MvvmFrameErrorDetail.Message">
+        <member name="P:GetcuReone.MvvmFrame.Entities.MvvmFrameErrorDetail.Message">
             <summary>
             Message error
             </summary>
         </member>
-        <member name="M:MvvmFrame.Entities.MvvmFrameErrorDetail.ToString">
+        <member name="M:GetcuReone.MvvmFrame.Entities.MvvmFrameErrorDetail.ToString">
             <summary>
             Returns a string that represents the current object
             </summary>
             <returns></returns>
         </member>
-        <member name="T:MvvmFrame.EventArgs.MvvmElementPropertyVerifyChangeEventArgs">
+        <member name="T:GetcuReone.MvvmFrame.EventArgs.MvvmElementPropertyVerifyChangeEventArgs">
             <summary>
             Parameters of the event of verification of a change in the model property
             </summary>
         </member>
-        <member name="M:MvvmFrame.EventArgs.MvvmElementPropertyVerifyChangeEventArgs.#ctor(System.String)">
+        <member name="M:GetcuReone.MvvmFrame.EventArgs.MvvmElementPropertyVerifyChangeEventArgs.#ctor(System.String)">
             <summary>
             Constructor
             </summary>
             <param name="propertyName">property name</param>
         </member>
-        <member name="P:MvvmFrame.EventArgs.MvvmElementPropertyVerifyChangeEventArgs.IsValid">
+        <member name="P:GetcuReone.MvvmFrame.EventArgs.MvvmElementPropertyVerifyChangeEventArgs.IsValid">
             <summary>
             True - event valid. It is not valid if there is at least one error
             </summary>
         </member>
-        <member name="M:MvvmFrame.EventArgs.MvvmElementPropertyVerifyChangeEventArgs.AddError(MvvmFrame.Entities.MvvmFrameErrorDetail)">
+        <member name="M:GetcuReone.MvvmFrame.EventArgs.MvvmElementPropertyVerifyChangeEventArgs.AddError(GetcuReone.MvvmFrame.Entities.MvvmFrameErrorDetail)">
             <summary>
             Add error
             </summary>
             <param name="detail"></param>
         </member>
-        <member name="M:MvvmFrame.EventArgs.MvvmElementPropertyVerifyChangeEventArgs.RemoveError(MvvmFrame.Entities.MvvmFrameErrorDetail)">
+        <member name="M:GetcuReone.MvvmFrame.EventArgs.MvvmElementPropertyVerifyChangeEventArgs.RemoveError(GetcuReone.MvvmFrame.Entities.MvvmFrameErrorDetail)">
             <summary>
             Remove error
             </summary>
             <param name="detail"></param>
         </member>
-        <member name="M:MvvmFrame.EventArgs.MvvmElementPropertyVerifyChangeEventArgs.GetErrors">
+        <member name="M:GetcuReone.MvvmFrame.EventArgs.MvvmElementPropertyVerifyChangeEventArgs.GetErrors">
             <summary>
             Return list erors
             </summary>
             <returns></returns>
         </member>
-        <member name="T:MvvmFrame.EventHandlers.MvvmElementPropertyVerifyChangeEventHandler">
+        <member name="T:GetcuReone.MvvmFrame.EventHandlers.MvvmElementPropertyVerifyChangeEventHandler">
             <summary>
             Delegate for model change property verification events
             </summary>
             <param name="element">an element whose property has been changed</param>
             <param name="args">event args</param>
         </member>
-        <member name="T:MvvmFrame.Interfaces.IAsyncCompensationOperations">
+        <member name="T:GetcuReone.MvvmFrame.Interfaces.IAsyncCompensationOperations">
             <summary>
             Interface describing the operation with compensatory operation
             </summary>
         </member>
-        <member name="M:MvvmFrame.Interfaces.IAsyncCompensationOperations.Compensate">
+        <member name="M:GetcuReone.MvvmFrame.Interfaces.IAsyncCompensationOperations.Compensate">
             <summary>
             Run compensation operations
             </summary>
         </member>
-        <member name="M:MvvmFrame.Interfaces.IAsyncCompensationOperations.AddCompensation(System.Func{System.Threading.Tasks.ValueTask})">
+        <member name="M:GetcuReone.MvvmFrame.Interfaces.IAsyncCompensationOperations.AddCompensation(System.Func{System.Threading.Tasks.ValueTask})">
             <summary>
             Add compensation
             </summary>
             <param name="compansation"></param>
         </member>
-        <member name="M:MvvmFrame.Interfaces.IAsyncCompensationOperations.ClearCompensation">
+        <member name="M:GetcuReone.MvvmFrame.Interfaces.IAsyncCompensationOperations.ClearCompensation">
             <summary>
             Clear compensation
             </summary>
         </member>
-        <member name="T:MvvmFrame.Interfaces.ICancellation">
+        <member name="T:GetcuReone.MvvmFrame.Interfaces.ICancellation">
             <summary>
             Interface cancel
             </summary>
         </member>
-        <member name="P:MvvmFrame.Interfaces.ICancellation.IsCancel">
+        <member name="P:GetcuReone.MvvmFrame.Interfaces.ICancellation.IsCancel">
             <summary>
             True - canceled, False - not canceled
             </summary>
         </member>
-        <member name="M:MvvmFrame.Interfaces.ICancellation.Cancel">
+        <member name="M:GetcuReone.MvvmFrame.Interfaces.ICancellation.Cancel">
             <summary>
             Cancel
             </summary>
         </member>
-        <member name="T:MvvmFrame.Interfaces.ICompensationOperations">
+        <member name="T:GetcuReone.MvvmFrame.Interfaces.ICompensationOperations">
             <summary>
             Interface describing the operation with compensatory operation
             </summary>
         </member>
-        <member name="M:MvvmFrame.Interfaces.ICompensationOperations.Compensate">
+        <member name="M:GetcuReone.MvvmFrame.Interfaces.ICompensationOperations.Compensate">
             <summary>
             Run compensation operations
             </summary>
         </member>
-        <member name="M:MvvmFrame.Interfaces.ICompensationOperations.AddCompensation(System.Action)">
+        <member name="M:GetcuReone.MvvmFrame.Interfaces.ICompensationOperations.AddCompensation(System.Action)">
             <summary>
             Add compensation
             </summary>
             <param name="compansation"></param>
         </member>
-        <member name="M:MvvmFrame.Interfaces.ICompensationOperations.ClearCompensation">
+        <member name="M:GetcuReone.MvvmFrame.Interfaces.ICompensationOperations.ClearCompensation">
             <summary>
             Clear compensation
             </summary>
         </member>
-        <member name="T:MvvmFrame.Interfaces.IErrorHandler">
+        <member name="T:GetcuReone.MvvmFrame.Interfaces.IErrorHandler">
             <summary>
             Error handler
             </summary>
         </member>
-        <member name="M:MvvmFrame.Interfaces.IErrorHandler.ErrorHandle(System.Exception)">
+        <member name="M:GetcuReone.MvvmFrame.Interfaces.IErrorHandler.ErrorHandle(System.Exception)">
             <summary>
             Error handle
             </summary>
             <param name="ex"></param>
         </member>
-        <member name="T:MvvmFrame.Interfaces.IFinalOperations">
+        <member name="T:GetcuReone.MvvmFrame.Interfaces.IFinalOperations">
             <summary>
             Interface final operations
             </summary>
         </member>
-        <member name="M:MvvmFrame.Interfaces.IFinalOperations.AddFinalOperation(System.Action)">
+        <member name="M:GetcuReone.MvvmFrame.Interfaces.IFinalOperations.AddFinalOperation(System.Action)">
             <summary>
             Add final operation
             </summary>
             <param name="operation">operation</param>
         </member>
-        <member name="M:MvvmFrame.Interfaces.IFinalOperations.FinishOperations">
+        <member name="M:GetcuReone.MvvmFrame.Interfaces.IFinalOperations.FinishOperations">
             <summary>
             Run final operations
             </summary>
         </member>
-        <member name="T:MvvmFrame.Interfaces.IModel">
+        <member name="T:GetcuReone.MvvmFrame.Interfaces.IModel">
             <summary>
             Base interface for model and view-model
             </summary>
         </member>
-        <member name="E:MvvmFrame.Interfaces.IModel.VerifyPropertyChange">
+        <member name="E:GetcuReone.MvvmFrame.Interfaces.IModel.VerifyPropertyChange">
             <summary>
-            Event virification <see cref="T:MvvmFrame.Interfaces.IModel"/>
+            Event virification <see cref="T:GetcuReone.MvvmFrame.Interfaces.IModel"/>
             </summary>
         </member>
-        <member name="P:MvvmFrame.Interfaces.IModel.ModelOptions">
+        <member name="P:GetcuReone.MvvmFrame.Interfaces.IModel.ModelOptions">
             <summary>
             Model options
             </summary>
         </member>
-        <member name="M:MvvmFrame.Interfaces.IModel.GetModel``1">
+        <member name="M:GetcuReone.MvvmFrame.Interfaces.IModel.GetModel``1">
             <summary>
             Method creation model
             </summary>
             <typeparam name="TModel"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:MvvmFrame.Interfaces.IModel.OnVerifyPropertyChange(System.String)">
+        <member name="M:GetcuReone.MvvmFrame.Interfaces.IModel.OnVerifyPropertyChange(System.String)">
             <summary>
-            Hendler <see cref="E:MvvmFrame.Interfaces.IModel.VerifyPropertyChange"/>
+            Hendler <see cref="E:GetcuReone.MvvmFrame.Interfaces.IModel.VerifyPropertyChange"/>
             </summary>
             <param name="propertyName"></param>
         </member>
-        <member name="M:MvvmFrame.Interfaces.IModel.OnPropertyChanged(System.String)">
+        <member name="M:GetcuReone.MvvmFrame.Interfaces.IModel.OnPropertyChanged(System.String)">
             <summary>
             Hendler <see cref="E:System.ComponentModel.INotifyPropertyChanged.PropertyChanged"/>
             </summary>
             <param name="propertyName"></param>
         </member>
-        <member name="M:MvvmFrame.Interfaces.IModel.OnVerification(MvvmFrame.EventArgs.MvvmElementPropertyVerifyChangeEventArgs)">
+        <member name="M:GetcuReone.MvvmFrame.Interfaces.IModel.OnVerification(GetcuReone.MvvmFrame.EventArgs.MvvmElementPropertyVerifyChangeEventArgs)">
             <summary>
             Verification hendler
             </summary>
             <param name="e"></param>
         </member>
-        <member name="M:MvvmFrame.Interfaces.IModel.OnErrors(System.Collections.ObjectModel.ReadOnlyCollection{MvvmFrame.Entities.MvvmFrameErrorDetail})">
+        <member name="M:GetcuReone.MvvmFrame.Interfaces.IModel.OnErrors(System.Collections.ObjectModel.ReadOnlyCollection{GetcuReone.MvvmFrame.Entities.MvvmFrameErrorDetail})">
             <summary>
             Hendler errors
             </summary>
             <param name="details"></param>
         </member>
-        <member name="T:MvvmFrame.Interfaces.IModelOptions">
+        <member name="T:GetcuReone.MvvmFrame.Interfaces.IModelOptions">
             <summary>
-            <see cref="T:MvvmFrame.Interfaces.IModel"/> options
+            <see cref="T:GetcuReone.MvvmFrame.Interfaces.IModel"/> options
             </summary>
         </member>
-        <member name="P:MvvmFrame.Interfaces.IModelOptions.UseOnlyOnPropertyChanged">
+        <member name="P:GetcuReone.MvvmFrame.Interfaces.IModelOptions.UseOnlyOnPropertyChanged">
             <summary>
-            use only <see cref="M:MvvmFrame.Interfaces.IModel.OnPropertyChanged(System.String)"/>
+            use only <see cref="M:GetcuReone.MvvmFrame.Interfaces.IModel.OnPropertyChanged(System.String)"/>
             </summary>
         </member>
-        <member name="P:MvvmFrame.Interfaces.IModelOptions.UseOnVerification">
+        <member name="P:GetcuReone.MvvmFrame.Interfaces.IModelOptions.UseOnVerification">
             <summary>
-            use <see cref="M:MvvmFrame.Interfaces.IModel.OnVerification(MvvmFrame.EventArgs.MvvmElementPropertyVerifyChangeEventArgs)"/>
+            use <see cref="M:GetcuReone.MvvmFrame.Interfaces.IModel.OnVerification(GetcuReone.MvvmFrame.EventArgs.MvvmElementPropertyVerifyChangeEventArgs)"/>
             </summary>
         </member>
-        <member name="P:MvvmFrame.Interfaces.IModelOptions.UseVerifyPropertyChange">
+        <member name="P:GetcuReone.MvvmFrame.Interfaces.IModelOptions.UseVerifyPropertyChange">
             <summary>
-            use <see cref="E:MvvmFrame.Interfaces.IModel.VerifyPropertyChange"/>
+            use <see cref="E:GetcuReone.MvvmFrame.Interfaces.IModel.VerifyPropertyChange"/>
             </summary>
         </member>
-        <member name="T:MvvmFrame.Interfaces.IPage">
+        <member name="T:GetcuReone.MvvmFrame.Interfaces.IPage">
             <summary>
             Interface for page
             </summary>
         </member>
-        <member name="M:MvvmFrame.Interfaces.IPage.InitializePageComponent``1(``0)">
+        <member name="M:GetcuReone.MvvmFrame.Interfaces.IPage.InitializePageComponent``1(``0)">
             <summary>
             <para>Initialize component. Instead of constructor</para>
             <para>DataContext = <paramref name="viewModel"/>; InitializeComponent();</para>
@@ -229,12 +229,12 @@
             <typeparam name="TViewModel"></typeparam>
             <param name="viewModel"></param>
         </member>
-        <member name="T:MvvmFrame.Interfaces.IViewModel">
+        <member name="T:GetcuReone.MvvmFrame.Interfaces.IViewModel">
             <summary>
             Interface for view-models
             </summary>
         </member>
-        <member name="M:MvvmFrame.Interfaces.IViewModel.GetViewModel``1">
+        <member name="M:GetcuReone.MvvmFrame.Interfaces.IViewModel.GetViewModel``1">
             <summary>
             Method creation view-model
             </summary>

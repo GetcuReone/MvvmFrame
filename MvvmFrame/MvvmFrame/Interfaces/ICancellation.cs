@@ -1,4 +1,4 @@
-﻿namespace MvvmFrame.Interfaces
+﻿namespace GetcuReone.MvvmFrame.Interfaces
 {
     /// <summary>
     /// Interface cancel
