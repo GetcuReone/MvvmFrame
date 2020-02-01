@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <DocumentationFile>MvvmFrame.xml</DocumentationFile>
+    <RootNamespace>GetcuReone.MvvmFrame</RootNamespace>
     
     <Authors>GetcuReone</Authors>
     <PackageId>MvvmFrame.root</PackageId>
