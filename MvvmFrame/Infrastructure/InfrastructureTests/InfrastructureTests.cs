@@ -26,10 +26,10 @@ namespace InfrastructureTests
         {
             Given("Get folder with .nupkg", () =>
             {
-                var currenFolder = new DirectoryInfo(System.Environment.CurrentDirectory);
+                var currenFolder = new DirectoryInfo(Environment.CurrentDirectory);
                 string nugetFolderPath = Path.Combine(
                     currenFolder.Parent.Parent.Parent.Parent.Parent.FullName,
-                    "NugetProject",
+                    "MvvmFrame",
                     "bin",
                     buildMode);
                 return new DirectoryInfo(nugetFolderPath);
