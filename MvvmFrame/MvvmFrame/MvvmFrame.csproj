@@ -41,11 +41,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <!--<None Include="..\..\LICENSE-2.0.txt">
+    <None Include="..\..\LICENSE-2.0.txt">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
-    <None Include="..\..\dev-pipelines.yml" />
+    <!--<None Include="..\..\dev-pipelines.yml" />
     <None Include="..\..\master-pipelines.yml" />
     <None Include="..\..\release-pipelines.yml" />-->
     <None Include="..\..\pipeline_steps\step_restore_build_pack.yml" Link="pipline_steps\step_restore_build_pack.yml" />
