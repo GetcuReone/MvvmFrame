@@ -11,8 +11,8 @@ variables:
   buildConfiguration: 'Release'
   majorVersion: '6'
   minorVersion: '0'
-  pathVersion: '0'
-  packageVersion: '$(majorVersion).$(minorVersion).$(pathVersion)'
+  patchVersion: '0'
+  packageVersion: '$(majorVersion).$(minorVersion).$(patchVersion)'
   packageFileName: 'MvvmFrame.root.$(packageVersion).nupkg'
   nugetProjectName: 'MvvmFrame'
 
