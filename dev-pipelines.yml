@@ -1,0 +1,21 @@
+trigger:
+- dev/*
+
+pool:
+  vmImage: 'windows-2019'
+
+variables:
+  solutionName: 'MvvmFrame'
+  solution: '**/$(solutionName).sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Debug'
+  packageVersion: '1.0.0'
+  packageFileName: 'MvvmFrame.root.$(packageVersion).nupkg'
+  nugetProjectName: 'MvvmFrame'
+
+steps:
+- template: pipeline_steps/step_restore_build_pack.yml
+
+- template: pipeline_steps/step_run_all_tests.yml
+
+- template: pipeline_steps/step_copy_nuget_to_artifacts.yml
