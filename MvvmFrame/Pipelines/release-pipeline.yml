@@ -1,0 +1,30 @@
+# Pipeline for master branch current project
+trigger:
+  branches:
+    include:
+    - release/*
+    exclude:
+    - master
+    - dev/*
+pr: none
+
+resources:
+  repositories:
+    - repository: global_pipeline_template
+      name: GetcuReone-Pipelines
+      type: git
+
+variables:
+- group: global-variables-group
+- group: GetcuReone-MvvmFrame-variables-group
+- name: 'buildConfiguration'
+  value: 'release'
+- name: 'patchVersion'
+  value: $[variables.releasePatchVersion]
+- name: 'attemptNumber'
+  value: $[counter(format('{0}.{1}.{2}', variables.majorVersion, variables.minorVersion, variables.releasePatchVersion), 1)]
+
+name: $(Build.DefinitionName)-$(majorVersion).$(minorVersion).$(patchVersion)-$(attemptNumber)
+
+jobs:
+  - template: nuget/release_nuget_build_template.yml@global_pipeline_template
