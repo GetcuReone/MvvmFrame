@@ -39,7 +39,7 @@ namespace InfrastructureTests
             {
                 string.Format(libPattern, "MvvmFrame.dll"),
                 string.Format(libPattern, "MvvmFrame.xml"),
-                "LICENSE.txt",
+                "LICENSE-2.0.txt",
             };
 
             VerifyNugetContainsFiles(_solutionFolder, nugetId, files.Length + 4, files);
