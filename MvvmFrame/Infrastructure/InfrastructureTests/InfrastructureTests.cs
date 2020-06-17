@@ -1,42 +1,59 @@
-using JwtTestAdapter;
-using JwtTestAdapter.Helpers;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Reflection;
+using GetcuReone.GetcuTestAdapter;
+using GetcuReone.GwtTestFramework;
+using GetcuReone.GwtTestFramework.Helpers;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace InfrastructureTests
 {
     [TestClass]
     public class InfrastructureTests : TestBase
     {
-#if DEBUG
-        private readonly string buildMode = "Debug";
-#else
-        private readonly string buildMode = "Release";
-#endif
+        private string _buildConfiguration;
+        private DirectoryInfo _solutionFolder;
+        private string _nugetProjectName;
+        private string _projectName;
+        private string _targetFramework;
 
-        [Timeout(Timeouts.Minute.One)]
+        [TestInitialize]
+        public void Initialize()
+        {
+            _buildConfiguration = Environment.GetEnvironmentVariable("buildConfiguration");
+            if (string.IsNullOrEmpty(_buildConfiguration))
+                _buildConfiguration = "Debug";
+
+            _solutionFolder = new DirectoryInfo(Environment.CurrentDirectory).Parent.Parent.Parent.Parent.Parent;
+            _nugetProjectName = "MvvmFrame";
+            _projectName = "MvvmFrame";
+            _targetFramework = "netstandard2.0";
+        }
+
         [TestMethod]
-        [Description("[infrastructure] Checking the presence of all the necessary files in the nugget package")]
+        [TestCategory(GetcuReoneTC.Infra)]
+        [Description("Checking the presence of all the necessary files in the nugget package.")]
+        [Timeout(Timeouts.Minute.One)]
         public void NugetHaveNeedFilesTestCase()
         {
             Given("Get folder with .nupkg", () =>
             {
-                var currenFolder = new DirectoryInfo(Environment.CurrentDirectory);
+                var currenFolder = new DirectoryInfo(System.Environment.CurrentDirectory);
                 string nugetFolderPath = Path.Combine(
                     currenFolder.Parent.Parent.Parent.Parent.Parent.FullName,
-                    "MvvmFrame",
+                    _nugetProjectName,
                     "bin",
-                    buildMode);
+                    _buildConfiguration);
                 return new DirectoryInfo(nugetFolderPath);
             })
                 .And("Get file .nupkg", nugetFolder =>
                 {
-                    return nugetFolder.GetFiles()
+                    var files = nugetFolder.GetFiles();
+
+                    return files
                         .Where(file => file.Name.Contains(".nupkg"))
                         .OrderBy(file => file.CreationTime)
                         .Last();
@@ -53,41 +70,54 @@ namespace InfrastructureTests
                 })
                 .Then("Check archive .nupkg", fileNames =>
                 {
+                    string libPattern = $"lib/{_targetFramework}/" + "{0}";
                     var files = new string[]
                     {
-                        "lib/netstandard2.0/MvvmFrame.dll",
-                        "lib/netstandard2.0/MvvmFrame.xml",
+                        string.Format(libPattern, "MvvmFrame.dll"),
+                        string.Format(libPattern, "MvvmFrame.dll"),
                         "LICENSE-2.0.txt"
                     };
+
+                    Assert.AreEqual(files.Length + 4, fileNames.Length, "Expected a different number of files in the package.");
 
                     foreach (string file in files)
                         Assert.IsTrue(fileNames.Any(fileFullName => fileFullName == file), $"The archive does not contain a file {file}");
                 });
         }
 
-        [Timeout(Timeouts.Minute.One)]
         [TestMethod]
-        [Description("[infrastructure] Check for all attribute Timeout tests")]
+        [TestCategory(GetcuReoneTC.Infra)]
+        [Description("Check for all attribute Timeout tests.")]
+        [Timeout(Timeouts.Minute.One)]
         public void AllHaveTimeoutTestCase()
         {
-            List<string> assemblyPaths = new List<string>
-            {
-                @"InfrastructureTests.dll",
-            };
-
-            Given("We get all the test builds", () => assemblyPaths.ConvertAll(name => Assembly.LoadFrom(name)))
-                .And("We get all types", assemblies => assemblies.SelectMany(assembly => assembly.GetTypes()).ToList())
-                .And("Get all classes with tests", types => types.Where(type => type.GetCustomAttribute(typeof(TestClassAttribute)) != null).ToList())
-                .When("Return all test methods", classes =>
+            Given("Get all file", () => InfrastructureHelper.GetAllFiles(_solutionFolder))
+                .And("Get all assemblies", files => files.Where(file => file.Name.Contains(".dll")))
+                .And($"Include only tests assemlies",
+                    files => files
+                        .Where(file => file.Name.Contains("Tests.dll")
+                            && !file.FullName.Contains("TestAdapter.dll")
+                            && !file.FullName.Contains("obj")
+                            && (file.Directory.Parent.Name.Contains(_buildConfiguration) || file.Directory.Name.Contains(_buildConfiguration)))
+                        .ToList())
+                .And("Get assembly infos", files =>
+                    files.Select(file =>
+                    {
+                        LoggingHelper.ConsoleInfo($"test assembly {file.FullName}");
+                        return Assembly.LoadFrom(file.FullName);
+                    }).ToList())
+                .And("Get types", assemblies => assemblies.SelectMany(assembly => assembly.GetTypes()))
+                .And("Get test classes", types => types.Where(type => type.GetCustomAttribute(typeof(TestClassAttribute)) != null))
+                .When("Get test methods", typeClasses =>
                 {
-                    List<MemberInfo> result = new List<MemberInfo>();
+                    var result = new List<MemberInfo>();
 
-                    foreach (var cl in classes)
+                    foreach (var cl in typeClasses)
                     {
                         foreach (var method in cl.GetMethods().Where(method => method.GetCustomAttribute(typeof(TestMethodAttribute)) != null))
                         {
                             result.Add(method);
-                            LoggingHelper.Info($"test method {cl.FullName}.{method.Name}()");
+                            LoggingHelper.ConsoleInfo($"test method {cl.FullName}.{method.Name}()");
                         }
                     }
 
@@ -95,41 +125,50 @@ namespace InfrastructureTests
                 })
                 .Then("Check timeouts", methods =>
                 {
-                    foreach (var method in methods)
+                    List<MemberInfo> invalidMethods = methods.Where(method => method.GetCustomAttribute(typeof(TimeoutAttribute)) == null).ToList();
+
+                    if (invalidMethods.Count != 0)
                     {
-                        if (method.GetCustomAttribute(typeof(TimeoutAttribute)) == null)
-                            Assert.Fail($"method {method.DeclaringType.FullName}.{method.Name} does not have an TimeoutAttribute");
+                        Assert.Fail("Methods dont have TimeoutAttribute:\n" + string.Join("\n", invalidMethods.Select(method => $"{method.DeclaringType.FullName}.{method.Name}")));
                     }
                 });
         }
 
-        [Timeout(Timeouts.Minute.One)]
         [TestMethod]
-        [Description("[infrastructure] all namespaces start with GetcuReone.ComboPatterns")]
+        [TestCategory(GetcuReoneTC.Infra)]
+        [Description("All namespaces start with GetcuReone.")]
+        [Timeout(Timeouts.Minute.One)]
         public void AllNamespacesStartWithGetcuReoneTestCase()
         {
-            string beginNamespace = "GetcuReone.MvvmFrame";
-            string rootNameAssemblies = "MvvmFrame";
+            string beginNamespace = "GetcuReone";
+            string partNameAssemblies = _projectName;
+            string[] excludeAssemblies = new string[]
+            {
+            };
 
-            Given("Get all file", () => InfrastructureHelper.GetAllFiles(new DirectoryInfo(Environment.CurrentDirectory).Parent.Parent.Parent.Parent.Parent))
+            Given("Get all file", () => InfrastructureHelper.GetAllFiles(_solutionFolder))
                 .And("Get all assemblies", files => files.Where(file => file.Name.Contains(".dll")))
-                .And($"Includ only {rootNameAssemblies} assemblies", files => files.Where(file => file.Name.Contains(rootNameAssemblies)))
-                .And("exclude auxiliary assemblies", files =>
-                {
-                    var result = new List<FileInfo>();
-
-                    foreach (FileInfo file in files)
-                    {
-                        if (!file.FullName.Contains("Tests.dll"))
+                .And($"Includ only {partNameAssemblies} assemblies", files => files.Where(file => file.Name.Contains(partNameAssemblies)))
+                .And($"Include only library assemlies",
+                    files => files
+                        .Where(file => file.FullName.Contains("Tests")
+                            && !file.Name.Contains("Tests.dll")
+                            && !file.Name.Contains("TestAdapter.dll")
+                            && !file.FullName.Contains("obj")
+                            && (file.Directory.Parent.Name.Contains(_buildConfiguration) || file.Directory.Name.Contains(_buildConfiguration))
+                            && excludeAssemblies.All(ass => ass != file.Name)))
+                .And($"Exclude duplicate",
+                    files => files
+                    .DistinctByFunc((x, y) => x.Name == y.Name)
+                    .ToList())
+                .And("Get assembly infos",
+                    files =>
+                        files.Select(file =>
                         {
-                            LoggingHelper.Info($"file {file.FullName}");
-                            result.Add(file);
-                        }
-                    }
+                            LoggingHelper.ConsoleInfo($"test assembly {file.FullName}");
+                            return Assembly.LoadFrom(file.FullName);
+                        }).ToList())
 
-                    return result;
-                })
-                .And("Get assembly infos", files => files.ConvertAll(file => Assembly.LoadFrom(file.FullName)))
                 .When("Get types", assemblies => assemblies.SelectMany(assembly => assembly.GetTypes()))
                 .Then("Check types", types =>
                 {
@@ -150,9 +189,10 @@ namespace InfrastructureTests
                 });
         }
 
-        [Timeout(Timeouts.Minute.One)]
         [TestMethod]
-        [Description("[infrastructure] assemblies have major version")]
+        [TestCategory(GetcuReoneTC.Infra)]
+        [Description("All namespaces start with GetcuReone.")]
+        [Timeout(Timeouts.Minute.One)]
         public void AssembliesHaveMajorVersionTestCase()
         {
             string[] includeAssemblies = new string[]
