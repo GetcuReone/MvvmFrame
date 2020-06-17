@@ -5,8 +5,11 @@ trigger:
     - release/*
     exclude:
     - master
-    - dev/*
-pr: none
+    - develop
+pr:
+  branches:
+    include:
+    - release/*
 
 resources:
   repositories:
@@ -16,15 +19,27 @@ resources:
 
 variables:
 - group: global-variables-group
-- group: GetcuReone-MvvmFrame-variables-group
+- group: GetcuReone-ComboPatterns-variables-group
 - name: 'buildConfiguration'
   value: 'release'
-- name: 'patchVersion'
-  value: $[variables.releasePatchVersion]
-- name: 'attemptNumber'
-  value: $[counter(format('{0}.{1}.{2}', variables.majorVersion, variables.minorVersion, variables.releasePatchVersion), 1)]
+- name: 'majorVersion'
+  value: $[variables['Release_Major']]
+- name: 'minorVersion'
+  value: $[variables['Release_Minor']]
+- ${{ if startsWith(variables['Build.SourceBranchName'], 'release') }}:
+  - name: 'patchVersion'
+    value: $[counter(format('{0}.{1}', variables.majorVersion, variables.minorVersion), 0)]
+  - name: 'buildName'
+    value: $[format('{0}-{1}.{2}.{3}', variables['Build.DefinitionName'], variables['majorVersion'], variables['minorVersion'], variables['patchVersion'])]
+- ${{ if not(startsWith(variables['Build.SourceBranchName'], 'release')) }}:
+  - name: 'sourceBranchName'
+    value: $[replace(variables['System.PullRequest.SourceBranch'], 'refs/heads/', '')]
+  - name: 'patchVersion'
+    value: $[counter(format('{0}-{1}.{2}', variables.sourceBranchName, variables.majorVersion, variables.minorVersion), 1)]
+  - name: 'buildName'
+    value: $[format('{0}-{1}-{2}.{3}.{4}', variables['sourceBranchName'], variables['Build.DefinitionName'], variables['majorVersion'], variables['minorVersion'], variables['patchVersion'])]
 
-name: $(Build.DefinitionName)-$(majorVersion).$(minorVersion).$(patchVersion)-$(attemptNumber)
+name: $[variables.buildName]
 
 jobs:
   - template: nuget/release_nuget_build_template.yml@global_pipeline_template
