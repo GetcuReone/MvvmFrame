@@ -19,7 +19,7 @@ resources:
 
 variables:
 - group: global-variables-group
-- group: GetcuReone-ComboPatterns-variables-group
+- group: GetcuReone-MvvmFrame-variables-group
 - name: 'buildConfiguration'
   value: 'debug'
 - name: 'majorVersion'

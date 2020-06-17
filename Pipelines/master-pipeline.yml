@@ -19,7 +19,7 @@ resources:
 
 variables:
 - group: global-variables-group
-- group: GetcuReone-ComboPatterns-variables-group
+- group: GetcuReone-MvvmFrame-variables-group
 - template: global_variables.yml@global_pipeline_template
 - name: 'buildConfiguration'
   value: 'release'
