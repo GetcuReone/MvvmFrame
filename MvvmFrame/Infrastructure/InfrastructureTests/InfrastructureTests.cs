@@ -37,6 +37,7 @@ namespace InfrastructureTests
                 string.Format(libPattern, "MvvmFrame.dll"),
                 string.Format(libPattern, "MvvmFrame.xml"),
                 "LICENSE-2.0.txt",
+                "README.md",
             };
 
             VerifyNugetContainsFiles(_solutionFolder, nugetId, files.Length + 4, files);
