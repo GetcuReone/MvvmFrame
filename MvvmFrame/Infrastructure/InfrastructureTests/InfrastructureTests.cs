@@ -37,6 +37,7 @@ namespace InfrastructureTests
                 string.Format(libPattern, "MvvmFrame.dll"),
                 string.Format(libPattern, "MvvmFrame.xml"),
                 "LICENSE-2.0.txt",
+                "README.md",
             };
 
             VerifyNugetContainsFiles(_solutionFolder, nugetId, files.Length + 4, files);
@@ -74,10 +75,9 @@ namespace InfrastructureTests
             string[] includeAssemblies = new string[]
             {
             };
-            string majorVersion = Environment.GetEnvironmentVariable("majorVersion");
-            string excpectedAssemblyVersion = majorVersion != null
-                ? $"{majorVersion}.0.0.0"
-                : "1.0.0.0";
+            string majorVersion = Environment.GetEnvironmentVariable("majorVersion") ?? "1";
+            string minorVersion = Environment.GetEnvironmentVariable("minorVersion") ?? "0";
+            string excpectedAssemblyVersion = $"{majorVersion}.{minorVersion}.0.0";
 
             CheckAssembliesVersion(_solutionFolder, _projectName, excpectedAssemblyVersion, includeAssemblies);
         }
