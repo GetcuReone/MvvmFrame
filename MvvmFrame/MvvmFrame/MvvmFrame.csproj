@@ -1,49 +1,47 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <DocumentationFile>MvvmFrame.xml</DocumentationFile>
-    <RootNamespace>GetcuReone.MvvmFrame</RootNamespace>
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <DocumentationFile>MvvmFrame.xml</DocumentationFile>
+        <RootNamespace>GetcuReone.MvvmFrame</RootNamespace>
 
-    <Authors>Itua Juel-Gaben</Authors>
-    <PackageId>MvvmFrame.root</PackageId>
-    <Product>MvvmFrame.root</Product>
-    <Description>Pattern implementation MVVM with Frame. This library is the basis for other libraries of the family. Use other libraries for projects. Root project</Description>
-    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-    <RepositoryUrl>https://github.com/GetcuReone/MvvmFrame.git</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <PackageTags>wpf frame mvvm mvvmframe getcureone</PackageTags>
-    <PackageReleaseNotes></PackageReleaseNotes>
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <Copyright>Copyright © 2019 $(Authors)</Copyright>
-    <NeutralLanguage>en-US</NeutralLanguage>
+        <Authors>Itua Juel-Gaben</Authors>
+        <PackageId>MvvmFrame.root</PackageId>
+        <Product>MvvmFrame.root</Product>
+        <Description>Pattern implementation MVVM with Frame. This library is the basis for other libraries of the family. Use other libraries for projects. Root project</Description>
+        <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+        <RepositoryUrl>https://github.com/GetcuReone/MvvmFrame.git</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageTags>wpf frame mvvm mvvmframe getcureone</PackageTags>
+        <PackageReleaseNotes></PackageReleaseNotes>
+        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+        <Copyright>Copyright © 2019 $(Authors)</Copyright>
+        <NeutralLanguage>en-US</NeutralLanguage>
 
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-  </PropertyGroup>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>$(snkFilePath)</AssemblyOriginatorKeyFile>
-    <DelaySign>false</DelaySign>
-    <AssemblyVersion>$(majorVersion).0.0.0</AssemblyVersion>
-    <FileVersion>$(majorVersion).0.0.0</FileVersion>
-  </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+        <SignAssembly>true</SignAssembly>
+        <AssemblyOriginatorKeyFile>$(snkFilePath)</AssemblyOriginatorKeyFile>
+        <DelaySign>false</DelaySign>
+        <AssemblyVersion>$(majorVersion).$(minorVersion).0.0</AssemblyVersion>
+        <FileVersion>$(majorVersion).$(minorVersion).0.0</FileVersion>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.3" />
-  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="System.Threading.Tasks.Extensions" Version="[4.5.3,)" />
+    </ItemGroup>
 
-  <ItemGroup>
-    <None Update="MvvmFrame.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="..\..\LICENSE-2.0.txt">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
+    <ItemGroup>
+        <None Include="..\..\LICENSE-2.0.txt">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
+        <None Include="..\..\README.md">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
+    </ItemGroup>
 
 </Project>
