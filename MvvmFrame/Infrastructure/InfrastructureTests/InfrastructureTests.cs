@@ -31,7 +31,7 @@ namespace InfrastructureTests
         public void NugetHaveNeedFilesTestCase()
         {
             string nugetId = "MvvmFrame.root";
-            string libPattern = $"lib/{TargetFramework}/" + "{0}";
+            string libPattern = $"lib/{TargetFramework}/GetcuReone." + "{0}";
             var files = new string[]
             {
                 string.Format(libPattern, "MvvmFrame.dll"),
@@ -75,7 +75,7 @@ namespace InfrastructureTests
             string[] includeAssemblies = new string[]
             {
             };
-            string majorVersion = Environment.GetEnvironmentVariable("majorVersion") ?? "1";
+            string majorVersion = Environment.GetEnvironmentVariable("majorVersion") ?? "7";
             string minorVersion = Environment.GetEnvironmentVariable("minorVersion") ?? "0";
             string excpectedAssemblyVersion = $"{majorVersion}.{minorVersion}.0.0";
 

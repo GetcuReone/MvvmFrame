@@ -1,11 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+    <Import Project="..\..\.buildTools\GetcuReone.Lib.props" />
+
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
-        <DocumentationFile>MvvmFrame.xml</DocumentationFile>
-        <RootNamespace>GetcuReone.MvvmFrame</RootNamespace>
 
-        <Authors>Itua Juel-Gaben</Authors>
         <PackageId>MvvmFrame.root</PackageId>
         <Product>MvvmFrame.root</Product>
         <Description>Pattern implementation MVVM with Frame. This library is the basis for other libraries of the family. Use other libraries for projects. Root project</Description>
@@ -13,20 +12,12 @@
         <RepositoryUrl>https://github.com/GetcuReone/MvvmFrame.git</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PackageTags>wpf frame mvvm mvvmframe getcureone</PackageTags>
-        <PackageReleaseNotes></PackageReleaseNotes>
+        <PackageReleaseNotes>Changed assembly name</PackageReleaseNotes>
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
         <Copyright>Copyright © 2019 $(Authors)</Copyright>
         <NeutralLanguage>en-US</NeutralLanguage>
 
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    </PropertyGroup>
-
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-        <SignAssembly>true</SignAssembly>
-        <AssemblyOriginatorKeyFile>$(snkFilePath)</AssemblyOriginatorKeyFile>
-        <DelaySign>false</DelaySign>
-        <AssemblyVersion>$(majorVersion).0.0.0</AssemblyVersion>
-        <FileVersion>$(majorVersion).0.0.0</FileVersion>
     </PropertyGroup>
 
     <ItemGroup>
